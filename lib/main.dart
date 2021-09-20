@@ -13,33 +13,37 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  var totalScore = 0;
   final questions = const [
     {
-      "question": "What is your name",
+      "question": "What is the capital city of India?",
       "options": [
-        "Tarun",
-        "Yashi",
-        "Roopa",
-        "Koushik"
-      ]
+        "Hyderabad",
+        "Bangalore",
+        "New Delhi",
+        "Mumbai"
+      ],
+      "answerIndex": 2
     },
     {
-      "question": "What's your favorite color?",
+      "question": "What's the India's National Animal?",
       "options": [
-        "Red",
-        "Blue",
-        "Green",
-        "Black"
-      ]
+        "Zebra",
+        "Peacock",
+        "Tiger",
+        "Lion"
+      ],
+      "answerIndex": 2
     },
     {
-      "question": "What's your favorite animal?",
+      "question": "What's the currency of India?",
       "options": [
-        "Rhino",
-        "Hippo",
-        "Dog",
-        "Cat"
-      ]
+        "Dollar",
+        "Rupee",
+        "Pound",
+        "Euro"
+      ],
+      "answerIndex": 1
     },
   ];
   int _curr = 0;
