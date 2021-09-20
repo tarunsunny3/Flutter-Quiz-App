@@ -47,6 +47,13 @@ class _MyAppState extends State<MyApp> {
     },
   ];
   int _curr = 0;
+
+  void playAgain() {
+    setState(() {
+      _curr = 0;
+    });
+  }
+
   void _checkAnswer(String optionSelected, int currQuestionIndex) {
     var currentQuestion = questions[currQuestionIndex];
     var answerIndex = currentQuestion["answerIndex"];
@@ -69,7 +76,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Quiz App'),
         ),
-        body: _curr < questions.length ? Quiz(questions: questions, currQuestionIndex: _curr, checkAnswer: _checkAnswer) : Result(score: totalScore),
+        body: _curr < questions.length ? Quiz(questions: questions, currQuestionIndex: _curr, checkAnswer: _checkAnswer) : Result(score: totalScore, playAgain: playAgain),
       ),
     );
   }

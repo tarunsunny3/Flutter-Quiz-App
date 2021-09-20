@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
   final int score;
-
-  Result({this.score});
+  final Function playAgain;
+  Result({this.score, this.playAgain});
   @override
   Widget build(BuildContext context) {
     return Column(children: [
@@ -12,7 +12,7 @@ class Result extends StatelessWidget {
       ),
       ElevatedButton(
         child: Text('Play again'),
-        onPressed: null,
+        onPressed: playAgain,
       )
     ]);
   }
