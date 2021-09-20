@@ -14,7 +14,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _curr = 0;
-  void checkAnswer() {
+  void _checkAnswer() {
     print(_curr);
     setState(() {
       _curr = _curr + 1;
@@ -36,9 +36,9 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: [
             Question(questions[_curr]),
-            Answer(),
-            Answer(),
-            Answer()
+            Answer(_checkAnswer),
+            Answer(_checkAnswer),
+            Answer(_checkAnswer),
           ],
         ),
       ),
