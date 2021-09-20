@@ -4,7 +4,7 @@ import './question.dart';
 import './answer.dart';
 
 class Quiz extends StatelessWidget {
-  final List<Map<String, List<String>>> questions;
+  final List<Map<String, Object>> questions;
   final int _curr;
   final Function _checkAnswer;
 
@@ -15,7 +15,7 @@ class Quiz extends StatelessWidget {
     return Column(
       children: [
         Question(questions[_curr].keys.elementAt(0)),
-        ...(questions[_curr]['options']).map((option) {
+        ...(questions[_curr]['options'] as List<String>).map((option) {
           return Answer(_checkAnswer, option);
         }).toList()
       ],
