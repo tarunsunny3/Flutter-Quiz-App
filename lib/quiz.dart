@@ -20,7 +20,7 @@ class Quiz extends StatelessWidget {
       children: [
         Question(questions[currQuestionIndex]["question"]),
         ...(questions[currQuestionIndex]['options'] as List<String>).map((option) {
-          return Answer(checkAnswer, option);
+          return Answer(() => checkAnswer(option, currQuestionIndex), option);
         }).toList()
       ],
     );

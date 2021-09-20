@@ -47,7 +47,12 @@ class _MyAppState extends State<MyApp> {
     },
   ];
   int _curr = 0;
-  void _checkAnswer() {
+  void _checkAnswer(String optionSelected, int currQuestionIndex) {
+    var currentQuestion = questions[currQuestionIndex];
+    var answerIndex = currentQuestion["answerIndex"];
+    var options = currentQuestion["options"];
+    print(answerIndex);
+    print(options);
     setState(() {
       _curr = _curr + 1;
     });
