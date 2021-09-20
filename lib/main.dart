@@ -44,16 +44,9 @@ class _MyAppState extends State<MyApp> {
   ];
   int _curr = 0;
   void _checkAnswer() {
-    if (_curr == questions.length - 1) {
-      print("Questions over");
-      setState(() {
-        _curr = 0;
-      });
-    } else {
-      setState(() {
-        _curr = _curr + 1;
-      });
-    }
+    setState(() {
+      _curr = _curr + 1;
+    });
   }
 
   @override
@@ -63,14 +56,16 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Quiz App'),
         ),
-        body: Column(
-          children: [
-            Question(questions[_curr]["question"]),
-            ...(questions[_curr]['options'] as List<String>).map((option) {
-              return Answer(_checkAnswer, option);
-            }).toList()
-          ],
-        ),
+        body: _curr < questions.length
+            ? Column(
+                children: [
+                  Question(questions[_curr]["question"]),
+                  ...(questions[_curr]['options'] as List<String>).map((option) {
+                    return Answer(_checkAnswer, option);
+                  }).toList()
+                ],
+              )
+            : Center(child: Text("Hey, Nice work we are done with the QUIZ")),
       ),
     );
   }
