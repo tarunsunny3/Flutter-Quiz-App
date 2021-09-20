@@ -6,6 +6,9 @@ class Answer extends StatelessWidget {
   Answer(this.answerClickHandler, this.optionText);
   @override
   Widget build(BuildContext context) {
-    return Container(padding: EdgeInsets.all(10), margin: EdgeInsets.only(bottom: 10, left: 5, right: 5), child: ElevatedButton(child: Text(optionText), onPressed: answerClickHandler));
+    return Container(
+      margin: EdgeInsets.only(bottom: 10, left: 5, right: 5),
+      child: Padding(padding: EdgeInsets.all(10), child: ElevatedButton(child: Text(optionText), onPressed: answerClickHandler)),
+    );
   }
 }
