@@ -65,7 +65,9 @@ class _MyAppState extends State<MyApp> {
                   }).toList()
                 ],
               )
-            : Center(child: Text("Hey, Nice work we are done with the QUIZ")),
+            : Center(
+                child: Text("Hey, Nice work we are done with the QUIZ"),
+              ),
       ),
     );
   }
