@@ -52,7 +52,10 @@ class _MyAppState extends State<MyApp> {
     var answerIndex = currentQuestion["answerIndex"];
     var options = currentQuestion["options"];
     print(answerIndex);
-    print(options);
+    print(options.runtimeType);
+    // if(options. answerIndex] == optionSelected){
+
+    // }
     setState(() {
       _curr = _curr + 1;
     });
