@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './quiz.dart';
+import './result.dart';
 
 void main() => runApp(MyApp());
 
@@ -58,11 +59,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Quiz App'),
         ),
-        body: _curr < questions.length
-            ? Quiz(questions, _curr, _checkAnswer)
-            : Center(
-                child: Container(padding: EdgeInsets.all(10), child: Text("Hey, Nice work we are done with the QUIZ", style: TextStyle(color: Colors.deepOrange, fontSize: 20))),
-              ),
+        body: _curr < questions.length ? Quiz(questions, _curr, _checkAnswer) : Result(),
       ),
     );
   }
