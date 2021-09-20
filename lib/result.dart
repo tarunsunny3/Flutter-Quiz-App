@@ -8,13 +8,16 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Center(
-        child: Container(padding: EdgeInsets.all(10), child: Text("Your score is $score", style: TextStyle(color: Colors.deepOrange, fontSize: 20))),
+        child: Container(padding: EdgeInsets.all(10), child: Text("Your score is $score", style: TextStyle(color: Colors.deepOrange, fontSize: 20, fontWeight: FontWeight.bold))),
       ),
       ElevatedButton(
         style: ButtonStyle(foregroundColor: MaterialStateProperty.all(Colors.white)),
         child: Padding(
-          padding: EdgeInsets.all(20),
-          child: Text('Play again'),
+          padding: EdgeInsets.all(15),
+          child: Text(
+            'Play again',
+            style: TextStyle(fontSize: 30),
+          ),
         ),
         onPressed: playAgain,
       )
