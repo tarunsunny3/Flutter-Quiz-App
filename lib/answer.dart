@@ -8,7 +8,7 @@ class Answer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      margin: EdgeInsets.only(bottom: 15, left: 5, right: 5),
+      margin: EdgeInsets.only(bottom: 15, left: 10, right: 10),
       child: ElevatedButton(
         child: Padding(
           padding: EdgeInsets.all(10),
