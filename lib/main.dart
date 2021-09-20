@@ -51,6 +51,7 @@ class _MyAppState extends State<MyApp> {
   void playAgain() {
     setState(() {
       _curr = 0;
+      totalScore = 0;
     });
   }
 
