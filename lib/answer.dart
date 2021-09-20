@@ -8,7 +8,13 @@ class Answer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: 10, left: 5, right: 5),
-      child: Padding(padding: EdgeInsets.all(10), child: ElevatedButton(child: Text(optionText), onPressed: answerClickHandler)),
+      child: ElevatedButton(
+        child: Padding(
+          padding: EdgeInsets.all(20),
+          child: Text(optionText),
+        ),
+        onPressed: answerClickHandler,
+      ),
     );
   }
 }
