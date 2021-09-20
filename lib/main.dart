@@ -44,7 +44,7 @@ class _MyAppState extends State<MyApp> {
   ];
   int _curr = 0;
   void _checkAnswer() {
-    if (_curr >= questions.length) {
+    if (_curr == questions.length - 1) {
       print("Questions over");
       setState(() {
         _curr = 0;
