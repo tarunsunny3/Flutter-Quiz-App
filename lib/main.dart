@@ -60,9 +60,9 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: [
             Question(questions[_curr]["question"]),
-            Answer(_checkAnswer),
-            Answer(_checkAnswer),
-            Answer(_checkAnswer),
+            ...(questions[_curr]['options'] as List<String>).map((option) {
+              return Answer(_checkAnswer, option);
+            }).toList()
           ],
         ),
       ),
