@@ -14,7 +14,7 @@ class Quiz extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Question(questions[_curr].keys.elementAt(0)),
+        Question(questions[_curr]["question"]),
         ...(questions[_curr]['options'] as List<String>).map((option) {
           return Answer(_checkAnswer, option);
         }).toList()
