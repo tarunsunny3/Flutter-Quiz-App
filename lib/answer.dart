@@ -5,6 +5,11 @@ class Answer extends StatelessWidget {
   Answer(this.answerClickHandler);
   @override
   Widget build(BuildContext context) {
-    return Container(width: double.infinity, child: ElevatedButton(child: Text("Answer"), onPressed: () => print("answer button is clicked")));
+    return Container(
+        width: double.infinity,
+        child: ElevatedButton(
+          child: Text("Answer"),
+          onPressed: answerClickHandler,
+        ));
   }
 }
