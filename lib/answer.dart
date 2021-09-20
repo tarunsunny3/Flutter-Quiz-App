@@ -11,7 +11,10 @@ class Answer extends StatelessWidget {
       child: ElevatedButton(
         child: Padding(
           padding: EdgeInsets.all(10),
-          child: Text(optionText),
+          child: Text(
+            optionText,
+            style: TextStyle(fontSize: 20),
+          ),
         ),
         onPressed: answerClickHandler,
       ),
