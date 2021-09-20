@@ -8,7 +8,7 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Center(
-        child: Container(padding: EdgeInsets.all(10), child: Text("Your score is $score", style: TextStyle(color: Colors.deepOrange, fontSize: 30, fontWeight: FontWeight.bold))),
+        child: Container(padding: EdgeInsets.all(10), child: Text("Your score is \$score", style: TextStyle(color: Colors.deepOrange, fontSize: 30, fontWeight: FontWeight.bold))),
       ),
       ElevatedButton(
         style: ButtonStyle(foregroundColor: MaterialStateProperty.all(Colors.white)),
