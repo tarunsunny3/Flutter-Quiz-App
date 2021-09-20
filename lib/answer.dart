@@ -10,7 +10,7 @@ class Answer extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 10, left: 5, right: 5),
       child: ElevatedButton(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(10),
           child: Text(optionText),
         ),
         onPressed: answerClickHandler,
