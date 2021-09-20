@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
         body: _curr < questions.length
             ? Quiz(questions, _curr, _checkAnswer)
             : Center(
-                child: Text("Hey, Nice work we are done with the QUIZ"),
+                child: Text("Hey, Nice work we are done with the QUIZ", style: TextStyle(color: Colors.deepOrange)),
               ),
       ),
     );
