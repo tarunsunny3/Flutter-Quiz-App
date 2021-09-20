@@ -5,18 +5,22 @@ import './answer.dart';
 
 class Quiz extends StatelessWidget {
   final List<Map<String, Object>> questions;
-  final int _curr;
-  final Function _checkAnswer;
+  final int currQuestionIndex;
+  final Function checkAnswer;
 
-  Quiz(this.questions, this._curr, this._checkAnswer);
+  Quiz({
+    @required this.questions,
+    @required this.currQuestionIndex,
+    @required this.checkAnswer,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Question(questions[_curr]["question"]),
-        ...(questions[_curr]['options'] as List<String>).map((option) {
-          return Answer(_checkAnswer, option);
+        Question(questions[currQuestionIndex]["question"]),
+        ...(questions[currQuestionIndex]['options'] as List<String>).map((option) {
+          return Answer(checkAnswer, option);
         }).toList()
       ],
     );
