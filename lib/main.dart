@@ -57,16 +57,10 @@ class _MyAppState extends State<MyApp> {
 
   var answersArray = [];
   void _checkAnswer(String optionSelected, int currQuestionIndex) {
-    // var currentQuestion = questions[currQuestionIndex];
-    // var answerIndex = currentQuestion["answerIndex"];
-    // var options = currentQuestion["options"];
     answersArray[currQuestionIndex] = optionSelected;
     setState(() {
       _curr = _curr + 1;
     });
-    // if ((options as List<String>)[answerIndex] == optionSelected) {
-    //   totalScore++;
-    // }
   }
 
   void handleNext() {
