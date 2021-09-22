@@ -86,7 +86,7 @@ class _MyAppState extends State<MyApp> {
               spacing: 10,
               runSpacing: 10,
               children: [
-                (_curr >= questions.length - 1) ? ElevatedButton(child: Text("Back"), onPressed: () => print("back")) : ElevatedButton(child: Text("Next"), onPressed: () => print("next"))
+                (_curr != 0) ? ElevatedButton(child: Text("Back"), onPressed: () => print("back")) : ElevatedButton(child: Text("Next"), onPressed: () => print("next"))
               ],
             ),
           ]))
