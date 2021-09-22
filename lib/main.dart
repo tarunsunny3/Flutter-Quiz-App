@@ -83,11 +83,11 @@ class _MyAppState extends State<MyApp> {
             Wrap(
               direction: Axis.horizontal,
               crossAxisAlignment: WrapCrossAlignment.start,
-              spacing: 5,
-              runSpacing: 5,
+              spacing: 10,
+              runSpacing: 10,
               children: [
-                ElevatedButton(child: Text("Next"), onPressed: null),
-                ElevatedButton(child: Text("Back"), onPressed: null),
+                ElevatedButton(child: Text("Next"), onPressed: () => print("next")),
+                ElevatedButton(child: Text("Back"), onPressed: () => print("back")),
               ],
             ),
           ]))
