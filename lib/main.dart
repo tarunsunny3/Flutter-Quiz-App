@@ -86,7 +86,14 @@ class _MyAppState extends State<MyApp> {
               spacing: 10,
               runSpacing: 10,
               children: [
-                (_curr != 0) ? ElevatedButton(child: Text("Back"), onPressed: () => print("back")) : ElevatedButton(child: Text("Next"), onPressed: () => print("next"))
+                (() {
+                  if (_curr == 0) {
+                    return Container(child: ElevatedButton(child: Text("Next"), onPressed: () => print("next")));
+                  } else if (_curr > 0 && _curr < questions.length - 1) {
+                    return Container(child: ElevatedButton(child: Text("Back"), onPressed: () => print("back")));
+                  }
+                }())
+                // (_curr != 0) ? ElevatedButton(child: Text("Back"), onPressed: () => print("back")) : ElevatedButton(child: Text("Next"), onPressed: () => print("next"))
               ],
             ),
           ]))
