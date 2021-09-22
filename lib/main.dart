@@ -109,7 +109,7 @@ class _MyAppState extends State<MyApp> {
                       ],
                     );
                   } else if (_curr == (questions.length - 1)) {
-                    return Container(child: ElevatedButton(child: Text("Back"), onPressed: () => print("back")));
+                    return Container(child: ElevatedButton(child: Text("Back"), onPressed: handleBack));
                   } else {
                     return Container(child: Text(""));
                   }
