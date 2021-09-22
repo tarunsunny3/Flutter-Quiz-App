@@ -77,7 +77,10 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Quiz App'),
         ),
-        body: _curr < questions.length ? Quiz(questions: questions, currQuestionIndex: _curr, checkAnswer: _checkAnswer) : Result(score: totalScore, playAgain: playAgain),
+        body: Column(children: [
+          (_curr < questions.length ? Quiz(questions: questions, currQuestionIndex: _curr, checkAnswer: _checkAnswer) : Result(score: totalScore, playAgain: playAgain)),
+          (Text("hello")),
+        ]),
       ),
     );
   }
