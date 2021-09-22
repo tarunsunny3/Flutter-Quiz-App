@@ -80,8 +80,15 @@ class _MyAppState extends State<MyApp> {
         body: Column(children: [
           (_curr < questions.length ? Quiz(questions: questions, currQuestionIndex: _curr, checkAnswer: _checkAnswer) : Result(score: totalScore, playAgain: playAgain)),
           (Row(children: [
-            ElevatedButton(child: Text("Back"), onPressed: null),
-            (ElevatedButton(child: Text("Next"), onPressed: null)),
+            Wrap(
+              direction: Axis.horizontal,
+              crossAxisAlignment: WrapCrossAlignment.start,
+              spacing: 5,
+              runSpacing: 5,
+              children: [
+                ElevatedButton(child: Text("Back"), onPressed: null),
+              ],
+            ),
           ]))
         ]),
       ),
