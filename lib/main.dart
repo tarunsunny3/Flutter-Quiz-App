@@ -67,6 +67,18 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  void handleNext() {
+    setState(() {
+      _curr = _curr + 1;
+    });
+  }
+
+  void handleBack() {
+    setState(() {
+      _curr = _curr - 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -88,12 +100,12 @@ class _MyAppState extends State<MyApp> {
               children: [
                 (() {
                   if (_curr == 0) {
-                    return Container(child: ElevatedButton(child: Text("Next"), onPressed: () => print("next")));
+                    return Container(child: ElevatedButton(child: Text("Next"), onPressed: handleNext));
                   } else if (_curr > 0 && _curr < questions.length - 1) {
                     return Row(
                       children: [
-                        Container(child: ElevatedButton(child: Text("Back"), onPressed: () => print("back"))),
-                        Container(child: ElevatedButton(child: Text("Next"), onPressed: () => print("next")))
+                        Container(child: ElevatedButton(child: Text("Back"), onPressed: handleBack)),
+                        Container(child: ElevatedButton(child: Text("Next"), onPressed: handleNext))
                       ],
                     );
                   } else if (_curr == (questions.length - 1)) {
