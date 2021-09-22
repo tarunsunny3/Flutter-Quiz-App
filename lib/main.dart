@@ -55,16 +55,18 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  var answersArray = [];
   void _checkAnswer(String optionSelected, int currQuestionIndex) {
-    var currentQuestion = questions[currQuestionIndex];
-    var answerIndex = currentQuestion["answerIndex"];
-    var options = currentQuestion["options"];
-    if ((options as List<String>)[answerIndex] == optionSelected) {
-      totalScore++;
-    }
+    // var currentQuestion = questions[currQuestionIndex];
+    // var answerIndex = currentQuestion["answerIndex"];
+    // var options = currentQuestion["options"];
+    answersArray[currQuestionIndex] = optionSelected;
     setState(() {
       _curr = _curr + 1;
     });
+    // if ((options as List<String>)[answerIndex] == optionSelected) {
+    //   totalScore++;
+    // }
   }
 
   void handleNext() {
@@ -76,6 +78,21 @@ class _MyAppState extends State<MyApp> {
   void handleBack() {
     setState(() {
       _curr = _curr - 1;
+    });
+  }
+
+  void handleSubmit() {
+    var score = 0;
+    for (int i = 0; i < answersArray.length; i++) {
+      var currentQuestion = questions[i];
+      var answerIndex = currentQuestion["answerIndex"];
+      var options = currentQuestion["options"];
+      if (answersArray[i] == (options as List<String>)[answerIndex]) {
+        score++;
+      }
+    }
+    setState(() {
+      totalScore = score;
     });
   }
 
@@ -109,7 +126,12 @@ class _MyAppState extends State<MyApp> {
                       ],
                     );
                   } else if (_curr == (questions.length - 1)) {
-                    return Container(child: ElevatedButton(child: Text("Back"), onPressed: handleBack));
+                    return Row(
+                      children: [
+                        Container(child: ElevatedButton(child: Text("Back"), onPressed: handleBack)),
+                        Container(child: ElevatedButton(child: Text("Submit"), onPressed: handleSubmit))
+                      ],
+                    );
                   } else {
                     return Container(child: Text(""));
                   }
