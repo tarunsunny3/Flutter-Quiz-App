@@ -86,6 +86,7 @@ class _MyAppState extends State<MyApp> {
               spacing: 5,
               runSpacing: 5,
               children: [
+                ElevatedButton(child: Text("Next"), onPressed: null),
                 ElevatedButton(child: Text("Back"), onPressed: null),
               ],
             ),
