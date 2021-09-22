@@ -79,8 +79,10 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(children: [
           (_curr < questions.length ? Quiz(questions: questions, currQuestionIndex: _curr, checkAnswer: _checkAnswer) : Result(score: totalScore, playAgain: playAgain)),
-          (ElevatedButton(child: Text("Back"), onPressed: null)),
-          (ElevatedButton(child: Text("Next"), onPressed: null)),
+          (Row(children: [
+            ElevatedButton(child: Text("Back"), onPressed: null),
+            (ElevatedButton(child: Text("Next"), onPressed: null)),
+          ]))
         ]),
       ),
     );
