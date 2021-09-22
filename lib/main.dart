@@ -92,10 +92,12 @@ class _MyAppState extends State<MyApp> {
                   } else if (_curr > 0 && _curr < questions.length - 1) {
                     return Row(
                       children: [
-                        Container(child: ElevatedButton(child: Text("Next"), onPressed: () => print("next"))),
-                        Container(child: ElevatedButton(child: Text("Back"), onPressed: () => print("back")))
+                        Container(child: ElevatedButton(child: Text("Back"), onPressed: () => print("back"))),
+                        Container(child: ElevatedButton(child: Text("Next"), onPressed: () => print("next")))
                       ],
                     );
+                  } else if (_curr == (questions.length - 1)) {
+                    return Container(child: ElevatedButton(child: Text("Back"), onPressed: () => print("back")));
                   } else {
                     return Container(child: Text(""));
                   }
